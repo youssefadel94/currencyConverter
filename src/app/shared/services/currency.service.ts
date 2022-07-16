@@ -13,10 +13,10 @@ export interface currencyRate {
 export class CurrencyService {
   constructor(private http: HttpClient) {}
   getLatestRates(currency: string = 'EUR') {
-    return this.http.get<currencyRate>(`${latest}?base=${currency}`);
+    return this.http.get<{ rates: currencyRate }>(`${latest}?base=${currency}`);
   }
   convertWithLatestRates(amout: number, currency: string = 'EUR') {
-    return this.http.get<currencyRate>(
+    return this.http.get<{ rates: currencyRate }>(
       `${latest}?base=${currency}&amount=${amout}`
     );
   }

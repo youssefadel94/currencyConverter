@@ -22,7 +22,7 @@ image is-128x128
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
-      Card header
+      {{ currency.key }}
       <figure class="image is-128x128">
         <img
           class="is-rounded"
@@ -30,6 +30,6 @@ image is-128x128
         />
       </figure>
     </p>
-    <p class="card-header-icon" aria-label="more options">amount</p>
+    <p class="card-header-icon" aria-label="more options">{{currency.value}}</p>
   </header>
 </div>
