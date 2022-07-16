@@ -21,9 +21,26 @@
   -o-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
-:root{
+:root {
   --main: #456cd0;
 }
-.is-main{
+.is-main {
   background: var(--main);
+}
+.is-scrollable {
+  overflow: scroll;
+  max-height: 100vh;
+}
+.is-100-vh{
+    height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  .is-100-vh{
+    height: 70vh !important;
+  }
+//   .is-scrollable {
+//   overflow: scroll;
+//   max-height: 100vh;
+// }
+
 }

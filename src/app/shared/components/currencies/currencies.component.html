@@ -1,4 +1,4 @@
-<div>
+<div class="is-scrollable">
   <div *ngFor="let cur of currencies | async | keyvalue">
     <app-currency-card [currency]="cur"></app-currency-card>
   </div>

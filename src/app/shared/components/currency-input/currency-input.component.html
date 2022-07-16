@@ -1,4 +1,4 @@
-<div class="columns">
+
   <div
     class="column is-full is-align-content-center is-align-items-center is-align-self-center"
   >
@@ -13,7 +13,7 @@
     class="column is-full is-align-content-center is-align-items-center is-align-self-center"
   >
     <div class="control" [ngClass]="{'is-loading': loading}">
-      <input class="input" type="text" placeholder="Loading input" (change)="inputChange($event)">
+      <input class="input" type="text" placeholder="Loading input" (keydown)="inputChange($event)">
     </div>
   </div>
-</div>
+

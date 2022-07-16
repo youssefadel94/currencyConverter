@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import {
   currencyRate,
   CurrencyService,
@@ -12,16 +12,23 @@ import {
 })
 export class ConverterComponent implements OnInit {
   currencies: Observable<currencyRate> = new Observable<currencyRate>();
+  loading = false;
   constructor(private currencyService: CurrencyService) {}
 
   ngOnInit(): void {
-    this.currencies = this.currencyService
-      .getLatestRates()
-      .pipe(map((res) => res.rates));
-    this.currencies.subscribe((res) => console.log(res));
+    this.loading = true;
+    this.currencies = this.currencyService.getLatestRates().pipe(
+      map((res) => res.rates),
+      tap(() => (this.loading = false))
+    );
+    // this.currencies.subscribe((res) => console.log(res));
   }
 
-  ipnutChange($event: number) {}
+  ipnutChange($event: number) {
+    this.loading = true;
+    this.currencies = this.currencyService.convertWithLatestRates($event).pipe(
+      map((res) => res.rates),
+      tap(() => (this.loading = false))
+    );
+  }
 }
-
-
