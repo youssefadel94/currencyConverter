@@ -21,15 +21,16 @@ image is-128x128
 128x128px -->
 <div class="card">
   <header class="card-header">
-    <p class="card-header-title">
+    <p class="card-header-title m-4">
       {{ currency.key }}
-      <figure class="image is-128x128">
-        <img
-          class="is-rounded"
-          src="https://bulma.io/images/placeholders/128x128.png"
-        />
+
+      <figure class="image is-48x48 mx-4">
+
+          <div
+    class="image is-64x64 m-auto is-rounded currency-flag currency-flag-{{ currency.key.toLowerCase() }}"
+  ></div>
       </figure>
     </p>
-    <p class="card-header-icon" aria-label="more options">{{currency.value}}</p>
+    <p class="card-header-icon m-4" aria-label="more options">{{currency.value | currency:currency.key:'symbol-narrow':'.2-2'}}</p>
   </header>
 </div>
