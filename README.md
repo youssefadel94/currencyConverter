@@ -1,3 +1,22 @@
+Angular CLI: 14.0.6
+Node: 14.17.6
+Package Manager: npm 6.14.15
+OS: win32 x64
+
+Angular: 14.0.6
+... animations, cli, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1400.6
+@angular-devkit/build-angular   14.0.6
+@angular-devkit/core            14.0.6
+@angular-devkit/schematics      14.0.6
+@schematics/angular             14.0.6
+rxjs                            7.5.6
+typescript                      4.7.4
+
 # CurConverter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
