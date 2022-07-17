@@ -9,6 +9,10 @@ import { ControlValueAccessor, FormBuilder, Validators } from '@angular/forms';
 export class CurrencyInputComponent implements OnInit {
   @Output() onChange = new EventEmitter();
   @Input() loading = false;
+  @Input() currency = {
+    key: 'EUR',
+    value: 1,
+  };
   delayTimer = setTimeout(function () {}, 1000);
 
   // form group with control value amount
@@ -17,7 +21,7 @@ export class CurrencyInputComponent implements OnInit {
       1,
       [
         Validators.required,
-        Validators.min(1),
+        Validators.min(0.01),
         Validators.max(100000000000000000000),
       ],
     ],

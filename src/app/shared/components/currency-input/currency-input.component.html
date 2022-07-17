@@ -2,7 +2,9 @@
   class="is-margin-top column is-full is-align-content-center is-align-items-center is-align-self-center"
 >
   <div
-    class="image is-64x64 m-auto is-rounded currency-flag currency-flag-eur"
+    class="image is-64x64 m-auto is-rounded currency-flag currency-flag-{{
+          currency.key.toLowerCase()
+        }}"
   ></div>
 
   <form [formGroup]="form">
@@ -11,14 +13,15 @@
         value="1"
         class="mt-4 is-width-100"
         type="number"
-        min="1"
+        min="0.01"
         max="100000000000000000000"
         formControlName="amount"
         placeholder="Enter Amount"
+        [(ngModel)]="currency.value"
       />
       <!-- (keydown)="inputChange($event)" -->
     </div>
     <p *ngIf="form.get('amount')?.errors" class="mt-4 has-text-centered is-danger">{{error}}</p>
-    <p class="is-sub-header mt-4 has-text-centered">EUR</p>
+    <p class="is-sub-header mt-4 has-text-centered">{{currency.key}}</p>
   </form>
 </div>

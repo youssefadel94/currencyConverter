@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { KeyValue } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 
 const api = 'https://api.exchangerate.host/';
 const fixerApi = 'https://fixer.io/';
@@ -15,6 +17,16 @@ export interface currencyRate {
   providedIn: 'root',
 })
 export class CurrencyService {
+  selectedCurrency = new BehaviorSubject<KeyValue<string, number>>({
+    key: 'EUR',
+    value: 1,
+  });
+  getSelectedCurrency() {
+    return this.selectedCurrency.asObservable();
+  }
+  setSelectedCurrency(cur: KeyValue<string, number>) {
+    this.selectedCurrency.next(cur);
+  }
   static getFixer() {
     return fixer;
   }

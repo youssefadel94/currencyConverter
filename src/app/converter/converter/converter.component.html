@@ -4,12 +4,16 @@
   >
     <app-currency-input
       [loading]="loading"
-      (onChange)="ipnutChange($event)"
+      [currency]="currency"
+      (onChange)="inputChange($event)"
     ></app-currency-input>
   </div>
   <div
     class="column is-align-content-center is-align-items-center is-align-self-center is-100-vh pr-4"
   >
-    <app-currencies [currencies]="currencies"></app-currencies>
+    <app-currencies
+    [currencies]="currencies"
+    (currencySelected)="currencySelected($event)"
+    ></app-currencies>
   </div>
 </div>

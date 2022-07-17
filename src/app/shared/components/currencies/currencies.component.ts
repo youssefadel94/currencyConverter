@@ -1,6 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { KeyValue } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { currencyRate } from '../../services/currency.service';
 
@@ -24,10 +24,14 @@ import { currencyRate } from '../../services/currency.service';
 export class CurrenciesComponent implements OnInit {
   @Input() currencies: Observable<currencyRate> =
     new Observable<currencyRate>();
+  @Output() currencySelected = new EventEmitter<KeyValue<string, number>>();
   constructor() {}
 
   ngOnInit(): void {}
 
+  selectCur(cur: KeyValue<string, number>) {
+    this.currencySelected.emit(cur);
+  }
   // onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
   //   return -1;
   // }

@@ -93,6 +93,9 @@ input {
 .is-margin-top {
   margin-top: 30vh;
 }
+.is-pointer {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
   .is-margin-top {
