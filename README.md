@@ -7,15 +7,15 @@ Angular: 14.0.6
 ... animations, cli, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
 
-Package                         Version
----------------------------------------------------------
-@angular-devkit/architect       0.1400.6
-@angular-devkit/build-angular   14.0.6
-@angular-devkit/core            14.0.6
-@angular-devkit/schematics      14.0.6
-@schematics/angular             14.0.6
-rxjs                            7.5.6
-typescript                      4.7.4
+## Package Version
+
+@angular-devkit/architect 0.1400.6
+@angular-devkit/build-angular 14.0.6
+@angular-devkit/core 14.0.6
+@angular-devkit/schematics 14.0.6
+@schematics/angular 14.0.6
+rxjs 7.5.6
+typescript 4.7.4
 
 # CurConverter
 

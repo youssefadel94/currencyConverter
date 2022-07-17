@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { currencyRate } from '../../services/currency.service';
@@ -13,4 +14,32 @@ export class CurrenciesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  // onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
+  //   return -1;
+  // }
+  //put on top function just like on compare but to put USD and GBP and AUD and INR and RMB and YEN on top
+  onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
+    if (
+      _left.key === 'USD' ||
+      _left.key === 'GBP' ||
+      _left.key === 'AUD' ||
+      _left.key === 'INR' ||
+      _left.key === 'RMB' ||
+      _left.key === 'YEN'
+    ) {
+      return -1;
+    } else if (
+      _right.key === 'USD' ||
+      _right.key === 'GBP' ||
+      _right.key === 'AUD' ||
+      _right.key === 'INR' ||
+      _right.key === 'RMB' ||
+      _right.key === 'YEN'
+    ) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
 }

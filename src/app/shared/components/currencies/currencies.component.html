@@ -1,5 +1,5 @@
 <div class="is-scrollable">
-  <div *ngFor="let cur of currencies | async | keyvalue">
+  <div *ngFor="let cur of currencies | async | keyvalue:onCompare">
     <app-currency-card [currency]="cur"></app-currency-card>
   </div>
 </div>

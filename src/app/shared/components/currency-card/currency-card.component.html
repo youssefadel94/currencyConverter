@@ -21,16 +21,18 @@ image is-128x128
 128x128px -->
 <div class="card">
   <header class="card-header">
-    <p class="card-header-title m-4">
+    <p class="card-header-title m-4 column is-one-fifth is-one-fifth-mobile">
       {{ currency.key }}
-
-      <figure class="image is-48x48 mx-4">
-
-          <div
-    class="image is-64x64 m-auto is-rounded currency-flag currency-flag-{{ currency.key.toLowerCase() }}"
-  ></div>
-      </figure>
     </p>
-    <p class="card-header-icon m-4" aria-label="more options">{{currency.value | currency:currency.key:'symbol-narrow':'.2-2'}}</p>
+    <figure class="image is-48x48 mr-4 column is-two-fifth is-two-fifth-mobile">
+      <div
+        class="image is-48x48 mr-4 is-rounded currency-flag currency-flag-{{
+          currency.key.toLowerCase()
+        }}"
+      ></div>
+    </figure>
+    <p class="card-header-icon m-4 column is-two-fifth is-two-fifth-mobile has-text-right" aria-label="more options">
+      {{ currency.value | currency: currency.key:"symbol-narrow":".2-2" }}
+    </p>
   </header>
 </div>

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main: #456cd0;
+  $family-sans-serif	: "Roboto", sans-serif;
+}
+body {
+  font-family: "Roboto", sans-serif !important;
+}
 ::-webkit-scrollbar-thumb:hover {
   background: #353c4b;
 }
@@ -21,9 +28,7 @@
   -o-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
-:root {
-  --main: #456cd0;
-}
+
 .is-main {
   background: var(--main);
 }
@@ -39,14 +44,22 @@
 }
 @media screen and (max-width: 768px) {
   .is-margin-top {
-  margin-top: 10vh;
-}
+    margin-top: 1vh;
+  }
   .is-100-vh {
-    height: 50vh !important;
+    height: 60vh !important;
+  }
+  .is-100-vh.is-35-vh-mobile {
+    height: 40vh !important;
   }
   .is-scrollable {
     max-height: -webkit-fill-available;
   }
+  input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin: -1vw !important;
+  opacity: 0;
+}
 }
 input {
   border-top: none !important;
@@ -57,9 +70,11 @@ input {
   background-color: rgba(255, 255, 255, 0) !important;
   color: white !important;
   text-align: center !important;
-  font-size: 55px !important;
-    font-weight: 800;
-    padding: 0px !important;
+  font-size: 50px !important;
+  font-weight: 700;
+  padding: 0px !important;
+  line-height: 58.59px !important;
+  font-family: "Roboto", sans-serif !important;
 }
 .currency-flag {
   background-size: cover; /* <------ */
@@ -71,8 +86,20 @@ input {
   border-radius: 50%;
 }
 .is-sub-header {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400;
+  size: 16px;
+  line-height: 18.75px;
+  color:rgba(255, 255, 255, 0.4);
 }
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    margin: -8px;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin: -0.5vw;
+  opacity: 0;
+}
+:focus-visible {
+    outline: 0px !important;
+}
+.is-width-100 {
+  width: 100%;
 }

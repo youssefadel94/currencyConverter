@@ -13,13 +13,25 @@ export class CurrencyInputComponent implements OnInit {
 
   // form group with control value amount
   form = new FormBuilder().group({
-    amount: [1, [Validators.required, Validators.min(1)]],
+    amount: [
+      1,
+      [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(100000000000000000000),
+      ],
+    ],
   });
+  error: string = '';
   constructor() {}
 
   ngOnInit(): void {
-    this.form.get('amount')?.valueChanges.subscribe((value) => {
-      this.inputChange({ target: { value } });
+    let amount = this.form.get('amount');
+    amount?.valueChanges.subscribe((value) => {
+      if (!amount?.errors) {
+        this.inputChange({ target: { value } });
+        this.error = '';
+      } else this.error = 'invalid amount';
     });
   }
   inputChange($event: any) {

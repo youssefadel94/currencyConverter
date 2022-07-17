@@ -4,22 +4,21 @@
   <div
     class="image is-64x64 m-auto is-rounded currency-flag currency-flag-eur"
   ></div>
-</div>
-<div
-  class="column is-full "
->
+
   <form [formGroup]="form">
     <div class="control" [ngClass]="{ 'is-loading': loading }">
       <input
         value="1"
-        class="input"
+        class="mt-4 is-width-100"
         type="number"
         min="1"
+        max="100000000000000000000"
         formControlName="amount"
         placeholder="Loading input"
       />
       <!-- (keydown)="inputChange($event)" -->
     </div>
-    <p class="is-sub-header has-text-centered">EUR</p>
+    <p *ngIf="form.get('amount')?.errors" class="mt-4 has-text-centered is-danger">{{error}}</p>
+    <p class="is-sub-header mt-4 has-text-centered">EUR</p>
   </form>
 </div>
