@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,6 +8,18 @@ import { currencyRate } from '../../services/currency.service';
   selector: 'app-currencies',
   templateUrl: './currencies.component.html',
   styleUrls: ['./currencies.component.scss'],
+  animations: [
+    trigger('inOutAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1s ease-out', style({ opacity: 1 })),
+      ]),
+      // transition(':leave', [
+      //   style({ opacity: 1 }),
+      //   animate('0.5s ease-in', style({ opacity: 0 })),
+      // ]),
+    ]),
+  ],
 })
 export class CurrenciesComponent implements OnInit {
   @Input() currencies: Observable<currencyRate> =

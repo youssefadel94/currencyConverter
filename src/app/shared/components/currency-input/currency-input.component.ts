@@ -39,6 +39,6 @@ export class CurrencyInputComponent implements OnInit {
     let that = this;
     this.delayTimer = setTimeout(function () {
       that.onChange.emit($event.target.value);
-    }, 200);
+    }, 100);
   }
 }

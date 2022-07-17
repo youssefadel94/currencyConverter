@@ -1,10 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --main: #456cd0;
-  $family-sans-serif	: "Roboto", sans-serif;
-}
-body {
-  font-family: "Roboto", sans-serif !important;
+  $family-sans-serif: "Roboto", sans-serif;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #353c4b;
@@ -28,39 +25,24 @@ body {
   -o-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
-
-.is-main {
-  background: var(--main);
+:focus-visible {
+  outline: 0px !important;
 }
-.is-scrollable {
-  overflow: scroll;
-  max-height: 100vh;
-}
-.is-100-vh {
+html {
+  width: 100vw;
   height: 100vh;
+  // background: var(--main) !important;
 }
-.is-margin-top {
-  margin-top: 30vh;
+body {
+  font-family: "Roboto", sans-serif !important;
 }
-@media screen and (max-width: 768px) {
-  .is-margin-top {
-    margin-top: 1vh;
-  }
-  .is-100-vh {
-    height: 60vh !important;
-  }
-  .is-100-vh.is-35-vh-mobile {
-    height: 40vh !important;
-  }
-  .is-scrollable {
-    max-height: -webkit-fill-available;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
+
+input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  margin: -1vw !important;
+  margin: -0.5vw;
   opacity: 0;
 }
-}
+
 input {
   border-top: none !important;
   border-left: none !important;
@@ -90,16 +72,44 @@ input {
   font-weight: 400;
   size: 16px;
   line-height: 18.75px;
-  color:rgba(255, 255, 255, 0.4);
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  margin: -0.5vw;
-  opacity: 0;
-}
-:focus-visible {
-    outline: 0px !important;
+  color: rgba(255, 255, 255, 0.4);
 }
 .is-width-100 {
   width: 100%;
+}
+.is-danger {
+  color: #ff0000;
+}
+.is-main {
+  background: var(--main);
+}
+.is-scrollable {
+  overflow: scroll;
+  max-height: 100vh;
+}
+.is-100-vh {
+  height: 100vh;
+}
+.is-margin-top {
+  margin-top: 30vh;
+}
+
+@media screen and (max-width: 768px) {
+  .is-margin-top {
+    margin-top: 1vh;
+  }
+  .is-100-vh {
+    height: 60vh !important;
+  }
+  .is-100-vh.is-35-vh-mobile {
+    height: 40vh !important;
+  }
+  .is-scrollable {
+    max-height: -webkit-fill-available;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    margin: -1vw !important;
+    opacity: 0;
+  }
 }
