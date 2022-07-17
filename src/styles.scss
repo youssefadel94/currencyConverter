@@ -10,6 +10,7 @@
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
+
 }
 
 ::-webkit-scrollbar-track {
@@ -96,7 +97,6 @@ input {
 .is-pointer {
   cursor: pointer;
 }
-
 @media screen and (max-width: 768px) {
   .is-margin-top {
     margin-top: 1vh;
